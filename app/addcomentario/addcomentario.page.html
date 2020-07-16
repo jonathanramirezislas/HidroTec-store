@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar comentario</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+     <ion-item *ngFor="let producto of productos">
+       <img src="http://proyectosita.com/HIDROTEC/administracionhidrotec/imagenes/{{producto.nombreimagen}}" style="width:100px;height:100px;">
+         <ion-label >
+           <h2>{{producto.nombre}}</h2><hr>
+        </ion-label >
+             </ion-item>
+         </ion-list>
+
+
+  <ion-item>
+    <ion-label>Calificar</ion-label>
+    <ion-select value="5" okText="OK" cancelText="Cancelar" id="calificacion">
+      <ion-select-option value="5">★★★★★ Excelente</ion-select-option>
+      <ion-select-option value="4">★★★★☆ Muy bueno</ion-select-option>
+      <ion-select-option value="3">★★★☆☆ Bueno</ion-select-option>
+      <ion-select-option value="2">★★☆☆☆ Malo</ion-select-option>
+      <ion-select-option value="1">★☆☆☆☆ Muy malo</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+  <ion-textarea placeholder="Agrega el comentario aqui..."  id="comentario"></ion-textarea>
+</ion-item>
+<ion-button  color="primary" (click)="Agregarcomentario()">Agregarcomentario</ion-button>
+
+
+
+
+</ion-content>

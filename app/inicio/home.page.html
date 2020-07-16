@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+  
+   <ion-item>
+      <ion-label class="resultado">
+        {{value}}
+      </ion-label>
+      </ion-item>
+     <ion-grid>
+       <ion-row>
+         <ion-button expand="block" (click)="clear()" class="calculadora" color="primary" >c</ion-button>
+         <ion-button expand="block" (click)="operacion('-')" class="calculadora" color="primary" >+/-</ion-button>
+         <ion-button expand="block" (click)="operacion('%')" class="calculadora" color="primary" >%</ion-button>
+         <ion-button expand="block" (click)="operacion('/')" class="calculadora" color="primary" >/</ion-button>
+       </ion-row>
+       <ion-row>
+         <ion-button expand="block" (click)="numeros(7)" value="7" class="calculadora" color="light" >7</ion-button>
+         <ion-button expand="block" (click)="numeros(8)" class="calculadora" color="light" >8</ion-button>
+         <ion-button expand="block" (click)="numeros(9)" class="calculadora" color="light" >9</ion-button>
+         <ion-button expand="block" (click)="operacion('x')" class="calculadora" color="primary" >x</ion-button>
+       </ion-row>
+       <ion-row>
+         <ion-button expand="block" (click)="numeros(4)" value="7" class="calculadora" color="light" >4</ion-button>
+         <ion-button expand="block" (click)="numeros(5)" class="calculadora" color="light" >5</ion-button>
+         <ion-button expand="block" (click)="numeros(6)" class="calculadora" color="light" >6</ion-button>
+         <ion-button expand="block" (click)="operacion('-')" class="calculadora" color="primary" >-</ion-button>
+       </ion-row>
+       <ion-row>
+         <ion-button expand="block" (click)="numeros(1)" class="calculadora" color="light" >1</ion-button>
+         <ion-button expand="block" (click)="numeros(2)" class="calculadora" color="light" >2</ion-button>
+         <ion-button expand="block" (click)="numeros(3)" class="calculadora" color="light" >3</ion-button>
+         <ion-button expand="block" (click)="operacion('+')" class="calculadora" color="primary" >+</ion-button>
+       </ion-row>
+       <ion-row>
+         <ion-button expand="block" (click)="numeros(0)" class="button0" color="light" >0</ion-button>
+         <ion-button expand="block" (click)="punto()" class="calculadora" color="light" >.</ion-button>
+         <ion-button expand="block" (click)="resultadooperaciones()" class="calculadora" color="primary" >=</ion-button>
+       </ion-row>
+   </ion-grid>
+
+</ion-content>

@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Comentarios</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list *ngFor="let comentario of comentarios">
+
+  <ion-item>
+  <ion-text color="dark">
+    <ion-label *ngIf="comentario.puntuacion==5">
+      <ion-icon src="/assets/star.svg"></ion-icon>
+      <ion-icon src="/assets/star.svg"></ion-icon>
+      <ion-icon src="/assets/star.svg"></ion-icon>
+      <ion-icon src="/assets/star.svg"></ion-icon>
+      <ion-icon src="/assets/star.svg"></ion-icon>
+    </ion-label>
+
+    <ion-label *ngIf="comentario.puntuacion==4">
+      <ion-icon src="/assets/star.svg"></ion-icon>
+      <ion-icon src="/assets/star.svg"></ion-icon>
+      <ion-icon src="/assets/star.svg"></ion-icon>
+      <ion-icon src="/assets/star.svg"></ion-icon>
+      <ion-icon src="/assets/staroutline.svg"></ion-icon>
+    </ion-label>
+    <ion-label *ngIf="comentario.puntuacion==3">
+      <ion-icon src="/assets/star.svg"></ion-icon>
+      <ion-icon src="/assets/star.svg"></ion-icon>
+      <ion-icon src="/assets/star.svg"></ion-icon>
+      <ion-icon src="/assets/staroutline.svg"></ion-icon>
+      <ion-icon src="/assets/staroutline.svg"></ion-icon>
+    </ion-label>
+    <ion-label *ngIf="comentario.puntuacion==2">
+      <ion-icon src="/assets/star.svg"></ion-icon>
+      <ion-icon src="/assets/star.svg"></ion-icon>
+      <ion-icon src="/assets/star.staroutline.svg"></ion-icon>
+      <ion-icon src="/assets/star.staroutline.svg"></ion-icon>
+      <ion-icon src="/assets/star.staroutline.svg"></ion-icon>
+    </ion-label>
+    <ion-label *ngIf="comentario.puntuacion==1">
+      <ion-icon src="/assets/star.svg"></ion-icon>
+      <ion-icon src="/assets/staroutline.svg"></ion-icon>
+      <ion-icon src="/assets/staroutline.svg"></ion-icon>
+      <ion-icon src="/assets/staroutline.svg"></ion-icon>
+      <ion-icon src="/assets/staroutline.svg"></ion-icon>
+    </ion-label>
+
+
+
+
+
+
+    <P>{{comentario.fecha | date :  "d/M/yy"  }}   {{comentario.nombre}}</P>
+
+    <h5>{{comentario.comentario}}</h5>
+
+      <h5>{{comentario.puntuacion}}</h5>
+      </ion-text>
+  </ion-item>
+
+
+</ion-list>
+
+
+</ion-content>

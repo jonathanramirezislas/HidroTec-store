@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title text-center>
+          <img src="assets/logo.png">
+      </ion-title>
+        <ion-buttons slot="start">
+    <ion-menu-button></ion-menu-button>
+          </ion-buttons>
+
+    <ion-title>
+
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    <ion-fab vertical="top" horizontal="end" slot="fixed" color="danger">
+     <ion-fab-button (click)="compras()">
+       <ion-icon name="cart" ></ion-icon>
+     </ion-fab-button>
+   </ion-fab>
+
+  <ion-searchbar   (keyup.enter)="search()" id="searchbar"></ion-searchbar>
+
+<!--Banner  -->
+  <ion-slides pager="true"  style="padding:0px;">
+       <ion-slide *ngFor="let ban of banners" style="padding:0px;">
+             <ion-card style="width:100%;height:100%;" style="padding:0px;">
+                 <ion-card-header style="padding:0px;">
+                   <ion-img src="{{ban.ImagePath}}"></ion-img>
+                 </ion-card-header>
+             </ion-card>
+         </ion-slide>
+         </ion-slides>
+
+
+  <ion-row>
+
+       <ion-col *ngFor="let item of itemsproductos" size="12"  (click)="detalle(item.id_producto)">
+         <ion-card >
+             <ion-card-content >
+               <img   src="http://proyectosita.com/HIDROTEC/administracionhidrotec/imagenes/{{item.imagenname}}" >
+               <ion-text color="primary">${{item.precio}}</ion-text><hr>
+               <ion-text slot="end">{{item.productoname}}</ion-text>
+
+             </ion-card-content>
+           </ion-card>
+       </ion-col>
+     </ion-row>
+
+
+</ion-content>

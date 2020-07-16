@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalle</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+
+
+  <ion-slides >
+    <ion-slide  *ngFor="let item of imagenesitem"  >
+                <ion-img class="itemimagen" src="http://proyectosita.com/HIDROTEC/administracionhidrotec/imagenes/{{item.nombre}}"  ></ion-img>
+      </ion-slide>
+ </ion-slides>
+
+	<ion-row *ngFor="let item of items">
+     <ion-col  size="12" >
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>{{item.nombre}}</ion-card-title>
+  </ion-card-header>
+             <ion-text color="primary">
+               <h2 style="font-family: Arial,font size=12,color:blue,text-align: center">${{item.precio}}</h2>
+             </ion-text>
+             <ion-text color="dark">
+               <h1>
+                 {{item.descripcion}}
+               </h1>
+             </ion-text>
+
+
+
+             <h1>Stock disponible: {{item.cantidad}}</h1>
+
+             <ion-input min="1" max="5" value="1" id="cantidad" name="text" type="number" [(ngModel)]="cantidad" placeholder="Ingrese cantidad"></ion-input>
+
+             <ion-button color="danger" (click)="Agregaralcarrito()">Agregar al carrito</ion-button>
+
+</ion-card>
+     </ion-col>
+     	</ion-row>
+
+<div id="stars">
+
+  </div>
+
+   <ion-button expand="full" (click)="Agregaralwishlist()">
+<ion-icon name="heart-empty"></ion-icon>
+  Agregar a wishlist
+       </ion-button>
+
+
+
+
+   <ion-item  *ngFor="let comentario of comentarios">
+     <ion-text color="dark">
+  <P>{{comentario.fecha | date :  "d/M/yy"  }}   {{comentario.nombre}}</P>
+  <h5>{{comentario.comentario}}</h5>
+</ion-text>
+   </ion-item>
+   <ion-button id="vercomentarios" color="primary" (click)="gocomentarios()">Ver comentarios</ion-button>
+<ion-text color="tertiary" style="text-align: center;">
+  <h1 style="font-family:Impact">
+  PRODUCTOS RELACIONADOS
+  </h1>
+</ion-text>
+
+
+<ion-slides pager="true">
+     <ion-slide *ngFor="let item of itemsrelacionados" (click)="detalle(item.id_producto)">
+           <ion-card style="width:100%;height:100%;">
+               <ion-card-header>
+                 <ion-img style="width:80%;height:80%;"  src="http://proyectosita.com/HIDROTEC/administracionhidrotec/imagenes/{{item.nombreimagen}}"></ion-img>
+                   <ion-card-title style="height:10%;"> <h2>{{item.nombre}}</h2></ion-card-title>
+                 <ion-card-title style="height:10%;" color="primary"><h3>${{item.precio}}</h3>
+   </ion-card-title>
+               </ion-card-header>
+           </ion-card>
+       </ion-slide>
+       </ion-slides>
+
+
+
+</ion-content>

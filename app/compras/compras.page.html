@@ -1,0 +1,86 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Carrito</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+ 
+
+ <ion-row>
+
+    <ion-col *ngFor="let producto of items" size="12"  (click)="detalle(producto.id_producto)">
+      <ion-card >
+          <ion-card-content >
+              <img src="https://proyectosita.com/HIDROTEC/administracionhidrotec/imagenes/{{producto.nombreimagen}}">
+            <ion-text color="primary">${{producto.precio}}</ion-text><hr>
+            <ion-text slot="end">{{producto.nombre}}</ion-text>
+            <br>
+            
+            <ion-button color="danger" slot="end" style="float:right" (click)="eliminar(producto.id_producto)">Eliminar</ion-button>
+         
+          </ion-card-content>
+        </ion-card>
+    </ion-col>
+  </ion-row>
+
+
+
+ <ion-item>
+<ion-text color="primary">
+</ion-text>
+ </ion-item>
+
+
+  <ion-item>
+    <ion-text >
+      Subtotal:
+    </ion-text>
+    <ion-text slot="end">
+      <h2>${{subtotal}}</h2>
+    </ion-text>
+  </ion-item>
+
+
+   <ion-item>
+  <ion-text color="secondary">
+    <h3>Envio <ion-icon name="airplane"></ion-icon></h3>
+  </ion-text>
+  <ion-text slot="end">
+    ${{envio}}
+  </ion-text>
+   </ion-item>
+
+   <ion-item>
+  <ion-text >
+  <h3>IVA:</h3>
+   </ion-text>
+    <ion-text slot="end">
+  <h5>${{iva}}</h5>
+  </ion-text>
+  </ion-item>
+
+  <ion-item>
+  <ion-text >
+  <h1>TOTAL:</h1>
+  </ion-text>
+   <ion-text slot="end">
+  <h1 >${{total}}</h1>
+  </ion-text>
+  </ion-item>
+
+<!-- -->
+ <ion-button expand="full" (click)="validarsensor()">
+ <ion-icon name="finger-print"></ion-icon>
+ Finalizar
+     </ion-button>
+
+
+
+
+
+
+
+
+</ion-content>

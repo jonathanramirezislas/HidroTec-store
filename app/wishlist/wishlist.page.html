@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Lista de deseos</ion-title>
+    <ion-button color="primary"  (click)="gohome()"><ion-icon name="home"></ion-icon>Inicio</ion-button>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!--
+  <ion-list>
+     <ion-item *ngFor="let producto of itemsproductos">
+       <img src="http://proyectosita.com/HIDROTEC/administracionhidrotec/imagenes/{{producto.nombreimagen}}" style="width:100px;height:100px;">
+       <ion-button color="danger" slot="end" (click)="eliminar(producto.id_producto)">Eliminar</ion-button>
+         <ion-label  (click)="godetalles(producto.id_producto)">
+
+           <h2>{{producto.nombre}}</h2><hr>
+          <h2>{{producto.precio}}</h2><hr>
+            <h2>{{producto.descripcion}}</h2><hr>
+
+
+  </ion-label >
+      </ion-item>
+  </ion-list>
+-->
+
+
+  <ion-row>
+
+      <ion-col *ngFor="let producto of itemsproductos" size="12" >
+        <ion-card >
+            <ion-card-content >
+              <div (click)="godetalles(producto.id_producto)">
+                  <img src="https://proyectosita.com/HIDROTEC/administracionhidrotec/imagenes/{{producto.nombreimagen}}">
+                  <ion-text color="primary">${{producto.precio}}</ion-text><hr>
+                  <ion-text slot="end">{{producto.nombre}}</ion-text>
+              </div>
+               
+                     <ion-button color="danger" style="float:right;" slot="end" (click)="eliminar(producto.id_producto)">Eliminar</ion-button>
+
+            </ion-card-content>
+          </ion-card>
+          <br>
+      </ion-col>
+    </ion-row>
+
+
+</ion-content>

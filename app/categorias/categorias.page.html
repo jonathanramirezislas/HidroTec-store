@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Categorias</ion-title>
+    <ion-button color="primary"  (click)="gohome()"><ion-icon name="home"></ion-icon>Inicio</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-row >
+     <ion-col *ngFor="let item of itemsproductos" (click)="verproductosporcategoria(item.id)" size="6">
+       <img   src="http://proyectosita.com/HIDROTEC/administracionhidrotec/imagenes/imagencategoria/{{item.imagen}}" style="width:300px;height:255px;">
+<br>
+<h1 style="text-align: center,font-family:Helvetica">{{item.categoria}}</h1>
+</ion-col>
+</ion-row>
+
+</ion-content>

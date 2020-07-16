@@ -1,0 +1,67 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mi Cuenta</ion-title>
+    <ion-button color="primary"  (click)="gohome()"><ion-icon name="home"></ion-icon>Home</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+
+    <ion-list >
+          <ion-list-header >
+            Cuenta
+          </ion-list-header>
+
+          <ion-item  (click)="saldo()" color="light">
+            <ion-avatar slot="start" >
+<ion-icon name="cash"></ion-icon>
+            </ion-avatar>
+            <ion-label >
+              <h2>Recargar Saldo</h2>
+            </ion-label>
+          </ion-item>
+
+
+          <ion-item (click)="historial()" color="medium" >
+            <ion-avatar slot="start" >
+              <ion-icon name="card"></ion-icon>
+            </ion-avatar>
+            <ion-label >
+              <h2>Historial</h2>
+            </ion-label>
+          </ion-item>
+
+
+          <ion-item (click)="gomisdatos()" color="tertiary">
+            <ion-avatar slot="start" >
+              <ion-icon name="person"></ion-icon>
+            </ion-avatar>
+            <ion-label >
+              <h2>Mis datos</h2>
+            </ion-label>
+          </ion-item>
+
+
+          <ion-item (click)="ajustes()" color="warning">
+            <ion-avatar slot="start" >
+              <ion-icon name="settings"></ion-icon>
+            </ion-avatar>
+            <ion-label >
+              <h2>Ajustes</h2>
+            </ion-label>
+          </ion-item>
+
+
+          <ion-item (click)="Cerrarsesion()" color="danger">
+            <ion-avatar slot="start" >
+              <ion-icon name="close-circle"></ion-icon>
+              </ion-avatar>
+            <ion-label >
+              <h2>Cerrar session</h2>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+
+</ion-content>

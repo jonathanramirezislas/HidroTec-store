@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Pedidos</ion-title>
+    <ion-button color="primary"  (click)="gohome()"><ion-icon name="home"></ion-icon>Inicio</ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!-- 
+
+
+  <ion-list>
+     <ion-item *ngFor="let producto of itemsproductos">
+       <img src="http://proyectosita.com/HIDROTEC/administracionhidrotec/imagenes/{{producto.nombreimagen}}" style="width:100px;height:100px;">
+         <ion-label >
+           <h2>{{producto.nombre}}</h2><hr>
+          <h2>${{producto.precio_producto}}</h2><hr>
+
+          <div *ngIf=" producto.estado == 1">
+            <h5>Se encuentra en almacen</h5><hr>
+          </div>
+          <div *ngIf=" producto.estado == 2">
+            <h5>Se encuentra en camino</h5><hr>
+          </div>
+          <div *ngIf=" producto.estado == 3">
+            <h5>Se entrego </h5><hr>
+            <button ion-button class="previous" (click)="agregarcomentario(producto.id_producto)"> Agregar comentario </button>
+          </div>
+
+ </ion-label >
+      </ion-item>
+  </ion-list>
+-->
+
+  <ion-row>
+
+      <ion-col *ngFor="let producto of itemsproductos" size="12" >
+        <ion-card >
+            <ion-card-content >
+                <img src="https://proyectosita.com/HIDROTEC/administracionhidrotec/imagenes/{{producto.nombreimagen}}">
+              <ion-text color="primary">${{producto.precio_producto}}</ion-text><hr>
+              <ion-text slot="end">{{producto.nombre}}</ion-text>
+              <br>
+              
+              <div *ngIf=" producto.estado == 1">
+                  <h5>Se encuentra en almacen</h5><hr>
+                </div>
+                <div *ngIf=" producto.estado == 2">
+                  <h5>Se encuentra en camino</h5><hr>
+                </div>
+                <div *ngIf=" producto.estado == 3">
+                  <h5>Se entrego </h5><hr>
+                  <button ion-button class="previous" (click)="agregarcomentario(producto.id_producto)"> Agregar comentario </button>
+                </div>
+      
+            </ion-card-content>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+
+
+
+</ion-content>

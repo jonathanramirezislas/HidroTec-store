@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Mis Datos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  *ngFor="let cliente of datoscliente">
+
+    <ion-list>
+      <ion-item>
+        <ion-label>Nombre:        {{cliente.nombre}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Apellidos:     {{cliente.apellidos}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email:         {{cliente.apellidos}}</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Telefono         {{cliente.telefono}}</ion-label>
+      </ion-item>
+    </ion-list>
+
+    <ion-segment>
+    <ion-segment-button >
+      <ion-label>Direccion</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Estado:        {{cliente.nombreestado}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Colonia:     {{cliente.colonia}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Calle:         {{cliente.calle}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>Numero         {{cliente.num}}</ion-label>
+    </ion-item>
+  </ion-list>
+
+
+
+    <ion-col>
+  <ion-row size="12">
+  <ion-item detail (click)="goajustes()">
+  <ion-label color="primary">
+    Ajustes
+    </ion-label>
+  </ion-item>
+  </ion-row>
+  </ion-col>
+</ion-content>

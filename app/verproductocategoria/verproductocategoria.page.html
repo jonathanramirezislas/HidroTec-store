@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ver Producto Por Categoria</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+    
+  <ion-row>
+
+      <ion-col *ngFor="let producto of items" size="12"  (click)="detalle(producto.id_producto)">
+        <ion-card >
+            <ion-card-content >
+              <img   src="http://proyectosita.com/HIDROTEC/administracionhidrotec/imagenes/{{producto.imagenname}}" >
+              <ion-text color="primary">${{producto.precio}}</ion-text><hr>
+              <ion-text slot="end">{{producto.nombre}}</ion-text>
+
+            </ion-card-content>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+
+
+</ion-content>
